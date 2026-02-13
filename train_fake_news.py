@@ -20,7 +20,7 @@ vectorizer = TfidfVectorizer(stop_words="english", max_features=5000)
 X_vec = vectorizer.fit_transform(X)
 
 # Train model
-model = LogisticRegression()
+model = LogisticRegression(max_iter=200)
 model.fit(X_vec, y)
 
 # Save
