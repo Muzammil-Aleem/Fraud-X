@@ -11,7 +11,7 @@ y = data["label"]
 vectorizer = TfidfVectorizer()
 X_vec = vectorizer.fit_transform(X)
 
-model = LogisticRegression()
+model = LogisticRegression(max_iter=200)
 model.fit(X_vec, y)
 
 joblib.dump(model, "models/otp_model.pkl")
